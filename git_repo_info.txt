@@ -1,0 +1,27 @@
+﻿User Name,Password
+quang.dang-at-160043731062,
+IXYU+z8jBol9jfSCOI/oIvGBTDI+1i4QfLNLALtmSRE=
+
+
+
+Zolta Information sent everybody git credentials:
+
+git remote add origin repository_link
+git pull origin master
+git add .
+git commit -m "<commit message">
+git push origin master
+
+The repositories that we are using :-
+Descartes:- https://git-codecommit.us-east-1.amazonaws.com/v1/repos/Descartes
+Murat
+Hima
+Quang
+Rama Sai 
+Siddhesh 
+Morris
+Ceth
+
+Research:- https://git-codecommit.us-east-1.amazonaws.com/v1/repos/Research
+Quang
+Murat

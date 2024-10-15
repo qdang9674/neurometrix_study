@@ -1,0 +1,169 @@
+COLUMNS= ['Subject_id', 'Computer_name', 'Block_type', 'Date', 'Session_id',
+       'Match_start', 'Match_end', 'Total_damage_deal', 'Gun_damage_deal',
+       'Rocket_damage_deal', 'Total_damage_taken', 'Gun_damage_taken',
+       'Rocket_damage_taken', 'Total_engage', 'Gun_engage', 'Rocket_engage',
+       'Total_shot_all', 'Gun_shot_all', 'Rocket_shot_all', 'Total_shot_hit',
+       'Gun_shot_hit', 'Rocket_shot_hit', 'Damager_per_Second_all',
+       'Shot_per_Second_all', 'Damager_per_Second_Hit_only',
+       'Shot_per_Second_Hit_only', 'Gun_kill', 'Rocket_kill', 'Total_kill',
+       'Death_by_gun', 'Death_by_rocket', 'Total_Death', 'Self_kill',
+       'Total_key_pressed', 'W_key', 'A_key', 'S_key', 'D_key', 'R_key',
+       'Q_key', 'MouseScrollDown', 'MouseScrollUp', 'SpaceBar',
+       'LeftMouseButton', 'RightMouseButton', 'Tab_key',
+       'Percent_of_Null_in_Pupil', 'Percent_of_Null_in_Gaze',
+       'Pupil_Average_mean', 'Pupil_Average_std', 'Pupil_Average_min',
+       'Pupil_Average_25th', 'Pupil_Average_50th', 'Pupil_Average_75th',
+       'Pupil_Average_max', 'Pupil_difference_mean', 'Pupil_difference_std',
+       'Pupil_difference_min', 'Pupil_difference_25th',
+       'Pupil_difference_50th', 'Pupil_difference_75th',
+       'Pupil_difference_max', 'Gaze_velocity_mean', 'Gaze_velocity_std',
+       'Gaze_velocity_min', 'Gaze_velocity_25th', 'Gaze_velocity_50th',
+       'Gaze_velocity_75th', 'Gaze_velocity_max', 'Heart_rate_min',
+       'Heart_rate_mean', 'Heart_rate_max', 'Heart_rate_variability',
+       'ECG_signal_to_noise']
+	   
+	   
+	   
+	   
+There are 74 columns:
+
+ENTRY INFORMATION:
+'Subject_id'			:Id of participants
+'Computer_name'			:Computer use to play. <Reptile, Mammal> are team's name. <gila,komodo,panda,thylacine> are computer names. 4 computers in total
+'Block_type'			:the current game. 'baseline' is when participants doing baseline. 'block_01' is 1st games. 'block_02' is 2nd game. etc.
+
+COMMENT: One row contains the data for 1 game for 1 participant. One game is about 10 mininutes. Each participants should have 4 to 5 rows. 1 row for 'baseline' and 3 to 4 games.
+
+
+
+
+
+GAME INFORMATION:
+'Date'					:Date recording
+'Session_id'			:each game has a unique session_id, if entries have the same session_id, they played with each other. 1 game should have 4 people
+'Match_start'			:Time when the game start in UTC
+'Match_end'				:Time when the game end in UTC
+
+
+
+
+
+GAME DATA:
+
+'Total_damage_deal'		: Damage deal to opponents. Total = Gun + Rocket
+'Gun_damage_deal'		: Gun only
+'Rocket_damage_deal'	: Rocket only
+
+
+'Total_damage_taken'	: Damage taken from opponents. Total = Gun + Rocket
+'Gun_damage_taken'		: Gun only
+'Rocket_damage_taken'	: Rocket only
+
+
+'Total_engage'		: Which weapon to use to start combat. It is calculated by recording the first shot after 5 seconds of no shot. Total = Gun + Rocket
+'Gun_engage'		: Use Gun to start the combat
+'Rocket_engage'		: Use Rocket to start the combat
+
+
+'Total_shot_all'	: Total shot that fire during the game. Total = Gun + Rocket. '_all' means include both hit shot and missed shot
+'Gun_shot_all'		: Gun only
+'Rocket_shot_all'	: Rocket only
+
+
+'Total_shot_hit'	: Total shot that hit the opponents. Total = Gun + Rocket. '_hit' means only count shot that hit the opponents and deal damage.
+'Gun_shot_hit'		: Gun only
+'Rocket_shot_hit'	: Rocket only
+
+COMMENT: can calculate Accuracy by Total_shot_hit/Total_shot_all
+
+
+'Damager_per_Second_all'	: is calculated by <All damage include missed shot>/<Game_duration>
+'Shot_per_Second_all'		: is calculated by Total_shot_all/<Game_duration>
+
+'Damager_per_Second_Hit_only': is calculated by Total_damage_deal/<Game_duration>         <- missed shot not include in here
+'Shot_per_Second_Hit_only'	: is calculated by Total_shot_hit/<Game_duration>
+
+
+'Gun_kill'			: Total kill using Gun only
+'Rocket_kill'		: Total kill using Rocket only
+'Total_kill'		: Total = Gun + Rocket. (exclude self_kill)
+
+
+'Death_by_gun'		: Total Death caused by Gun only
+'Death_by_rocket'	: Total Death caused by Rocket only
+'Total_Death'		: Total = Gun + Rocket. (exclude self_kill)
+
+'Self_kill'			: participant kill themself (only possible by using rocket)
+
+
+
+
+
+KEY PRESSED:
+COMMENT: only record event when key is pressed, exclude hold and release events. Why it matter?
+		 For example: if participant pressed and hold 'LeftMouseButton' to fire gun shot multiple time. This will record as 1 event.
+
+'Total_key_pressed' 								: The total key pressed during the game. Noice: The sum of all keys bellow might not add up to 'Total_key_pressed'. 
+													  Because there is some key that is not important and not included in here
+'W_key', 'A_key', 'S_key', 'D_key'					: Moving keys
+'R_key'												: Reloading
+'Q_key', 'MouseScrollDown', 'MouseScrollUp'			: Switch Weapon
+'SpaceBar'											: Jump
+'LeftMouseButton'									: Shot/fire
+'RightMouseButton'									: Aims
+'Tab_key'											: Check score
+
+
+
+
+
+EYE_DATA:
+COMMENT: I forgot to drop outliers. Therefore, the 'min' and 'max' are heavy affected by noise
+
+
+'Percent_of_Null_in_Pupil'			: Percent of missing data in pupil. 0.05 -> 5%
+'Percent_of_Null_in_Gaze'			: Percent of missing data in gaze. 0.05 -> 5%
+
+
+Pupil average = (pupil left + pupil right) / 2.
+'Pupil_Average_mean'			: mean/average
+'Pupil_Average_std'				: standard deviation
+'Pupil_Average_min'				: 0th   percentage / minimum
+'Pupil_Average_25th'			: 25th  percentage
+'Pupil_Average_50th'			: 50th  percentage / median
+'Pupil_Average_75th'			: 75th  percentage
+'Pupil_Average_max'				: 100th percentage / maximum
+
+
+Pupil difference = the difference between pupil left and right: |pupil left - pupil right|.
+'Pupil_difference_mean'			: mean/average
+'Pupil_difference_std'			: standard deviation
+'Pupil_difference_min'			: 0th   percentage / minimum
+'Pupil_difference_25th'			: 25th  percentage
+'Pupil_difference_50th'			: 50th  percentage / median
+'Pupil_difference_75th'			: 75th  percentage
+'Pupil_difference_max'			: 100th percentage / maximum
+
+
+Gaze_velocity = the speed of eye moving. Calculate by Euclidean distance of velocity_gaze_x and velocity_gaze_y.
+'Gaze_velocity_mean'			: mean/average
+'Gaze_velocity_std'				: standard deviation
+'Gaze_velocity_min'				: 0th   percentage / minimum
+'Gaze_velocity_25th'			: 25th  percentage
+'Gaze_velocity_50th'			: 50th  percentage / median
+'Gaze_velocity_75th'			: 75th  percentage
+'Gaze_velocity_max'				: 100th percentage / maximum
+
+
+
+
+
+ECG_DATA:
+COMMENT: Did not filter the noise. 'Heart_rate_variability' some of them look very high.
+
+'Heart_rate_min'		:heart rate minimum
+'Heart_rate_mean'		:heart rate mean/average
+'Heart_rate_max'		:heart rate maximum
+'Heart_rate_variability':Heart rate variability
+     
+'ECG_signal_to_noise': signal quality check for ecg. calculated by clean_power/noise_power. higher than 4 is consider good signal.

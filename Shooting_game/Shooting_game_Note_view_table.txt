@@ -1,0 +1,81 @@
+force-on-force:
+
+
+export_gunshots: 6096 row,  have extra component and bone columns
+viz_gunshots: 6096 row, have extra team_name columns
+gunshot_trace: 6096 rows, no Name, ID only, lot more in-depth columns that might not usefull
+both: where shot start, hit, distance of shot,
+
+
+
+export_kills: 387 rows, killer is the weapon (which weapon to kill victim)
+viz_kills: 387 rows     killer is the player
+player_death: 387 row, only have killer and victim id, no name (not usefull)
+both: killer name and victim name
+
+
+
+
+export_match_duration: 6 rows
+match_duration: 6 rows,
+both: the same view. have time start and time end for each session (need to check the timestamp to make sure the eye/ecg data is at the same time with the game data, the eye/ecg data is mapped manually, mistake can happen)
+
+
+
+export_player_health: 1597 rows, have both source and victim name
+player_health: 1597 rows, only have ID for source and victim, not the name
+viz_health: 1597 rows, have damager ID not name. Have victim's name
+both: max health(always at 50), damage took, remaning health, is_fatal.
+
+
+
+
+export_rocket_explosions: 251 rows, have name of the source
+weapon_explosion: 251 row, only have ID of the souce
+both: where it hit, impact radius (always 600)
+(this might not include the gun, rocket only)
+
+
+
+export_rocket_traces: 263 rows, have hostname
+rocket_trace: 263 row, have ID only no name
+viz_rocket_traces: 263 row, have 'rocket_number' (from 1 to 6) not sure what this mean
+both: start location and impact location
+
+
+
+export_teams: 13 rows,
+team: 13 rows,
+both: same, have player name, ID, team. Look like it only have data for 1 session and 1 team. (could be some bug in this view)
+
+
+
+export_weapon_ammo: 8008 rows, have shooter name
+weapon_ammo: 8008 rows, ID only
+both: both total ammo, and magazie_ammo (both gun and rocket)
+
+
+
+
+player: unique, have ID and the player name. (can use to map to other ID)
+
+
+
+viz_gunshot_kills: 376 rows, exclusive to gun only
+viz_rocket_kills: 38 rows, exclusive to rocket only
+Both: have shooter and victim name, their team, where it start, where it hit
+
+
+viz_damage:6817 rows, have shooter and victim name, ID, team. Have the damage deal (if does not have weapon type but 15 damaged should be gun, other number is rocket)
+
+
+
+
+viz_damage_inflicted: 441 rows, damage_inflicted columns, not sure what it mean 
+viz_damage_endured: 443 rows,  damage_endured columns, not sure what it mean
+Both: ID only, no name, 
+
+
+
+
+

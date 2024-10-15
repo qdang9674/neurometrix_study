@@ -1,0 +1,10 @@
+Difficulty,game_type,How challenging was it? How hard did you have to work?,How successful were you in accomplishing the task goals?,"How stressful, discouraging, and irritating was the task?",How mentally demanding was the task?,How hurried or rushed was the pace of the task?
+Easy,enumuration,10.66326530612245,12.0,6.653061224489796,9.714285714285714,12.510204081632653
+Easy,task_switching,9.03,13.51,6.7,9.5,9.4
+Easy,working_memory,3.9587628865979383,17.350515463917525,2.422680412371134,4.43298969072165,3.4742268041237114
+Hard,enumuration,16.03,8.28,9.45,13.26,17.53
+Hard,task_switching,13.346938775510203,9.928571428571429,9.33673469387755,12.153061224489797,14.459183673469388
+Hard,working_memory,14.618556701030927,7.876288659793815,8.8659793814433,13.835051546391753,8.22680412371134
+Medium,enumuration,13.66,10.27,8.16,11.34,15.19
+Medium,task_switching,9.46,13.13,6.79,9.47,10.19
+Medium,working_memory,9.206185567010309,13.072164948453608,5.762886597938144,8.927835051546392,6.381443298969073
